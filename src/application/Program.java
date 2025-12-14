@@ -15,9 +15,8 @@ public class Program {
         sellerDao.insert(new Seller(33, "Pedro", "pedro@gmail.com", new Date(), 1000.00, new Department(2, "Eletronics")));
         Department dep = new Department(3, null);
 
-        sellerDao.deleteById(19);
-        sellerDao.deleteById(21);
-        sellerDao.deleteById(22);
+        sellerDao.update(new Seller(5, "Donal Green", "donalgreen@gmail.com", new Date(), 5600.40, new Department(2, "Eletronics")));
+
 
         List<Seller> list = sellerDao.findByDepartment(dep);
         List<Seller> lista = sellerDao.findAll();
