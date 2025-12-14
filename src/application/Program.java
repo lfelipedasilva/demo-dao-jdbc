@@ -6,6 +6,7 @@ import model.entities.Department;
 import model.entities.Seller;
 
 import java.util.Date;
+import java.util.List;
 
 public class Program {
     public static void main(String[] args) {
@@ -16,8 +17,12 @@ public class Program {
 
         SellerDao sellerDao = DaoFactory.createSellerDao();
 
-        Seller seller1 = sellerDao.findById(15);
+        Department dep = new Department(3, null);
 
-        System.out.println(seller1.toString());
+        List<Seller> list = sellerDao.findByDepartment(dep);
+
+        for(Seller sel : list) {
+            System.out.println(sel);
+        }
     }
 }
