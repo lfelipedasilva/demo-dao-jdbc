@@ -20,9 +20,12 @@ public class Program {
         Department dep = new Department(3, null);
 
         List<Seller> list = sellerDao.findByDepartment(dep);
+        List<Seller> lista = sellerDao.findAll();
 
-        for(Seller sel : list) {
+
+        for(Seller sel : lista) {
             System.out.println(sel);
         }
+
     }
 }
