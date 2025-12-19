@@ -196,6 +196,7 @@ public class SellerDaoJDBC implements SellerDao {
                 Department dep = map.get(rs.getInt("DepartmentId"));
                 if (dep == null) {
                     dep = instantiateDepartment(rs);
+                    map.put(rs.getInt("DepartmentId"), dep);
                 }
 
                 Seller sel = instantiateSeller(rs, dep);
